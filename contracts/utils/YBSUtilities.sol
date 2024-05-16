@@ -67,7 +67,7 @@ contract YBSUtilities {
         uint userStakedBalance = YBS.balanceOf(_account);
         if (userStakedBalance == 0) return 0;
         uint currentWeekStaked = getAccountStakeAmountAt(_account, currentWeek);
-        uint lastWeekStaked = getAccountStakeAmountAt(_account, currentWeek);
+        uint lastWeekStaked = getAccountStakeAmountAt(_account, currentWeek - 1);
         if(userStakedBalance >= currentWeekStaked + lastWeekStaked){
             userStakedBalance - currentWeekStaked - lastWeekStaked;
         }
